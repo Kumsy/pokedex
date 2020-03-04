@@ -15,9 +15,16 @@ def home():
     return 'work in progress'
 
 # Test calls
-url = 'https://pokeapi.co/api/v2/pokemon/'
+# Pokemon info is accessed by a pokemon's number. Ex: bulbasaur == 1
+url = 'https://pokeapi.co/api/v2/pokemon/1'
 pokemon_api = requests.get(url)
-pprint(pokemon_api.json())
+
+# Pokemon name
+pprint(pokemon_api.json()['name'])
+
+# Front pokemon sprite image url
+# pprint(pokemon_api.json()['sprites']['front_default'])
+
 
 
 
