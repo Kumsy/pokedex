@@ -9,15 +9,20 @@ app = Flask(__name__)
 app.secret_key = 'omnislash'
 app.jinja_env.undefined = StrictUndefined
 
+# Routes
 @app.route('/')
 def home():
     return 'work in progress'
 
+# Test calls
 url = 'https://pokeapi.co/api/v2/pokemon/'
 pokemon_api = requests.get(url)
 pprint(pokemon_api.json())
 
 
+
+
+###########################
 if __name__ == "__main__":
     app.debug = True
 
